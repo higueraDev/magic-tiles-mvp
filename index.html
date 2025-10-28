@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Magic Tiles MVP</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="screen-start" class="screen active">
+    <h1>Magic Tiles MVP</h1>
+    <p>Tap tiles as they cross the hit line. Miss or wrong tap ends the game.</p>
+    <button id="btn-start">Start Game</button>
+    <div id="highscore-block" class="hidden">
+      <p>Best Score: <span id="best-score">0</span></p>
+      <ol id="leaderboard"></ol>
+    </div>
+  </div>
+
+  <div id="screen-game" class="screen">
+    <div class="hud">
+      <span>Score: <span id="score">0</span></span>
+      <span>Progress: <progress id="progress" value="0" max="100"></progress></span>
+    </div>
+    <canvas id="game-canvas" width="400" height="600"></canvas>
+    <p class="hint">Tap inside lane columns to hit tiles at the line.</p>
+  </div>
+
+  <div id="screen-end" class="screen">
+    <h2>Game Over</h2>
+    <p>Your Score: <span id="final-score">0</span></p>
+    <p>Best Score: <span id="final-best-score">0</span></p>
+    <button id="btn-restart">Play Again</button>
+    <div>
+      <h3>Top Scores</h3>
+      <ol id="end-leaderboard"></ol>
+    </div>
+  </div>
+
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
